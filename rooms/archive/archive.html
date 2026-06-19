@@ -1,1 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AFIJ Archive Room</title>
+  <link rel="stylesheet" href="archive.css" />
+</head>
+<body>
 
+<div id="archive-room">
+  <div class="archive-bg"></div>
+
+  <!-- Change href values to your real Carrd anchors/pages. -->
+  <a href="#library" class="room-nav nav-left" aria-label="Go to Library">
+    <span class="nav-label">Library</span><span class="hex">‹</span>
+  </a>
+
+  <a href="#office" class="room-nav nav-right" aria-label="Go to Office">
+    <span class="nav-label">Office</span><span class="hex">›</span>
+  </a>
+
+  <a href="#observatory" class="room-nav nav-up" aria-label="Go to Observatory">
+    <span class="nav-label">Observatory</span><span class="hex">⌃</span>
+  </a>
+
+  <a href="#balcony" class="room-nav nav-down" aria-label="Go to Balcony">
+    <span class="hex">⌄</span><span class="nav-label">Balcony</span>
+  </a>
+
+  <!-- Drawer order: Leona > Monochrome > Kovi / Ben > Synopsis > Oliver -->
+  <div class="filing-cabinet" aria-label="Archive Filing Cabinet">
+    <button class="drawer" onclick="AFIJArchive.openModal('drawer_leona')" aria-label="Open Leona file"></button>
+    <button class="drawer" onclick="AFIJArchive.openModal('drawer_monochrome')" aria-label="Open Monochrome file"></button>
+    <button class="drawer" onclick="AFIJArchive.openModal('drawer_kovi')" aria-label="Open Kovi file"></button>
+    <button class="drawer" onclick="AFIJArchive.openModal('drawer_ben')" aria-label="Open Ben file"></button>
+    <button class="drawer" onclick="AFIJArchive.openModal('drawer_synopsis')" aria-label="Open Case Summary"></button>
+    <button class="drawer" onclick="AFIJArchive.openModal('drawer_oliver')" aria-label="Open Oliver file"></button>
+  </div>
+</div>
+
+<!-- MODAL STORAGE -->
+
+<div id="drawer_synopsis" class="modal-app">
+  <div class="overlay" onclick="AFIJArchive.closeModal('drawer_synopsis')"></div>
+  <div class="modal">
+    <h2>CASE SUMMARY</h2>
+    <p><strong>A Flight in June</strong></p>
+    <p>In a dying world of cogs and gears where gods fade when forgotten, a pair of twin detectives leave their quiet hometown to investigate a nationwide string of disappearances.</p>
+    <p>The deeper they dig into the towering city of Monochrome, the more they uncover a sickness turning people into brass from the inside out, a criminal underworld that seems to know more than it should, and traces of a forgotten god who may still be alive.</p>
+    <p>Along the way they cross paths with a wanted criminal who treats life like a stage play, an undercover mafia boss who can manipulate time, ancient spirits from Welsh folklore, and a mystery that reaches far beyond the missing persons case they came to solve.</p>
+    <hr>
+    <p>Some stories are about finding the truth. This one is about what the world chooses to remember.</p>
+    <p>Nothing is permanent. Seasons change, cities crumble, and even gods can fade into myth. Yet despite everything, the world continues to turn.</p>
+    <span onclick="AFIJArchive.closeModal('drawer_synopsis')" class="close-btn">CLOSE FILE</span>
+  </div>
+</div>
+
+<div id="drawer_kovi" class="modal-app">
+  <div class="overlay" onclick="AFIJArchive.closeModal('drawer_kovi')"></div>
+  <div class="modal">
+    <h2>FILE: PHOENIX</h2>
+    <p><strong>Kovion “Kovi” Starling</strong></p>
+    <p>Information broker. Wanted criminal. Professional liar. Kovi is known throughout Monochrome for his disguises, false names, impossible luck, and a smile that usually means someone else is already losing.</p>
+    <p>Behind the theatrics is a sharp mind and a survivor's instinct. He treats life like a stage play, always performing, always adapting, but the act becomes harder to maintain whenever someone notices the truth beneath the performance.</p>
+    <hr>
+    <p><em>"Everyone wears a mask. Mine just happens to be prettier."</em></p>
+    <p><em>"I had a much better quote here before somebody got offended."</em></p>
+    <span onclick="AFIJArchive.closeModal('drawer_kovi')" class="close-btn">CLOSE FILE</span>
+  </div>
+</div>
+
+<div id="drawer_ben" class="modal-app">
+  <div class="overlay" onclick="AFIJArchive.closeModal('drawer_ben')"></div>
+  <div class="modal">
+    <h2>FILE: BENJAMIN FRIEST</h2>
+    <p><strong>Detective of Veridia</strong></p>
+    <p>Warm, reckless, and dangerously kind, Benjamin has a gift for reaching people others overlook. His easygoing nature often hides how seriously he takes every case placed in front of him.</p>
+    <p>Ben believes people are worth trusting until proven otherwise. He throws himself into problems without hesitation, guided more by empathy than caution, and refuses to leave anyone behind if he can help it.</p>
+    <hr>
+    <p><em>"I'd rather get hurt helping someone than walk away wondering if I could've."</em></p>
+    <span onclick="AFIJArchive.closeModal('drawer_ben')" class="close-btn">CLOSE FILE</span>
+  </div>
+</div>
+
+<div id="drawer_leona" class="modal-app">
+  <div class="overlay" onclick="AFIJArchive.closeModal('drawer_leona')"></div>
+  <div class="modal">
+    <h2>FILE: LEONA FRIEST</h2>
+    <p><strong>Detective of Veridia</strong></p>
+    <p>Logical, observant, and far less cold than she appears, Leona follows evidence where others follow fear. She notices what people hide, what rooms remember, and what her brother is absolutely about to do wrong.</p>
+    <p>Though often reserved, Leona cares deeply about the people around her. She values honesty, precision, and patience, preferring facts over assumptions and solutions over dramatics.</p>
+    <hr>
+    <p><em>"The truth exists whether we're comfortable with it or not."</em></p>
+    <span onclick="AFIJArchive.closeModal('drawer_leona')" class="close-btn">CLOSE FILE</span>
+  </div>
+</div>
+
+<div id="drawer_oliver" class="modal-app">
+  <div class="overlay" onclick="AFIJArchive.closeModal('drawer_oliver')"></div>
+  <div class="modal">
+    <h2>CLASSIFIED FILE: OLIVER MORRIS</h2>
+    <p><strong>Undercover Operative</strong></p>
+    <p>Respected by detectives, feared by criminals, and avoided by informants, Oliver Morris operates deep within Monochrome’s criminal underworld under identities few people are allowed to question.</p>
+    <p>Patient, disciplined, and difficult to read, Oliver has spent years learning how to disappear into a role. Beneath his calm exterior is someone fiercely dedicated to his work, willing to endure isolation if it means seeing a case through to the end.</p>
+    <hr>
+    <p><em>"The difference between a secret and a confession is usually time."</em></p>
+    <span onclick="AFIJArchive.closeModal('drawer_oliver')" class="close-btn">CLOSE FILE</span>
+  </div>
+</div>
+
+<div id="drawer_monochrome" class="modal-app">
+  <div class="overlay" onclick="AFIJArchive.closeModal('drawer_monochrome')"></div>
+  <div class="modal">
+    <h2>CITY RECORDS: MONOCHROME</h2>
+    <p><strong>Industrial Capital of Northshire</strong></p>
+    <p>Monochrome is the largest city in the known world and the beating heart of industry, commerce, and innovation.</p>
+    <p>Built upon towering coastal cliffs, the city grew upward rather than outward, eventually forming six immense layers stacked upon one another. As Monochrome expanded, wealth and influence rose with it.</p>
+    <p>Connecting every layer is the Ascension, a colossal elevator network that carries citizens between the city's heights and depths. For many, it is a symbol of opportunity. For others, a reminder that not everyone is destined to reach the top.</p>
+    <p>Beneath the brass towers and steam-powered marvels lies a city of secrets, corruption, and mysteries waiting to be uncovered.</p>
+    <hr>
+    <p><em>"The city is split into six layers. The rich live at the top, the poor live at the bottom, and the criminals live everywhere."</em> — K. Starling</p>
+    <span onclick="AFIJArchive.closeModal('drawer_monochrome')" class="close-btn">CLOSE FILE</span>
+  </div>
+</div>
+
+<script src="archive.js"></script>
+</body>
+</html>
