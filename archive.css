@@ -53,47 +53,165 @@ html, body {
   opacity:.5;
 }
 
+/* ==========================================
+   ROOM NAVIGATION
+========================================== */
+
 .room-nav {
   position:absolute;
-  z-index:5;
+  z-index:10;
   color:var(--afij-text);
   text-decoration:none;
   text-align:center;
   font-weight:700;
   letter-spacing:.05em;
+  transition:.2s ease;
 }
 
 .nav-label {
   display:block;
-  margin-bottom:.35rem;
+  margin-bottom:.5rem;
+  font-size:.95rem;
+  opacity:.9;
+  animation: afijTextGlow 3s ease-in-out infinite;
 }
 
+/* Arrow Button */
+
 .hex {
-  width:58px;
-  height:52px;
+  width:62px;
+  height:58px;
   display:grid;
   place-items:center;
   margin:0 auto;
-  clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);
-  background:rgba(35,20,70,.62);
-  border:1px solid rgba(0,0,0,.75);
-  box-shadow:0 0 14px rgba(0,0,0,.65), inset 0 0 0 1px rgba(255,255,255,.08);
-  font-size:2.6rem;
+
+  clip-path:polygon(
+    25% 0,
+    75% 0,
+    100% 50%,
+    75% 100%,
+    25% 100%,
+    0 50%
+  );
+
+  background:rgba(55,30,105,.82);
+
+  border:1px solid rgba(212,203,203,.20);
+
+  box-shadow:
+    0 0 10px rgba(212,203,203,.20),
+    0 0 18px rgba(147,95,255,.15),
+    inset 0 0 0 1px rgba(255,255,255,.08);
+
+  font-size:2.8rem;
   line-height:1;
-  transition:transform .15s ease, filter .15s ease;
+
+  animation: afijGlowPulse 3s ease-in-out infinite;
+
+  transition:
+    transform .2s ease,
+    filter .2s ease;
 }
+
+/* Hover */
 
 .room-nav:hover .hex {
-  transform:scale(1.08);
-  filter:brightness(1.12);
+  transform:scale(1.18);
+
+  animation:
+    afijGlowPulse 1.4s ease-in-out infinite;
+
+  filter:brightness(1.25);
 }
 
-.nav-left { left:8%; top:41%; }
-.nav-right { right:8%; top:41%; }
-.nav-up { top:6%; left:50%; transform:translateX(-50%); }
-.nav-down { bottom:8%; left:50%; transform:translateX(-50%); }
-.nav-down .nav-label { margin-top:.35rem; margin-bottom:0; }
+.room-nav:hover .nav-label {
+  opacity:1;
+}
 
+/* ==========================================
+   POSITIONING
+========================================== */
+
+/* Library */
+
+.nav-left {
+  left:2%;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+/* Office */
+
+.nav-right {
+  right:2%;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+/* Observatory */
+
+.nav-up {
+  top:3%;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+/* Balcony */
+
+.nav-down {
+  bottom:3%;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.nav-down .nav-label {
+  margin-top:.5rem;
+  margin-bottom:0;
+}
+
+/* ==========================================
+   GLOW ANIMATIONS
+========================================== */
+
+@keyframes afijGlowPulse {
+
+  0%,100% {
+
+    box-shadow:
+      0 0 10px rgba(212,203,203,.20),
+      0 0 20px rgba(147,95,255,.15),
+      inset 0 0 0 1px rgba(255,255,255,.08);
+
+    filter:brightness(1);
+  }
+
+  50% {
+
+    box-shadow:
+      0 0 18px rgba(212,203,203,.55),
+      0 0 34px rgba(147,95,255,.35),
+      0 0 50px rgba(147,95,255,.25),
+      inset 0 0 10px rgba(255,255,255,.12);
+
+    filter:brightness(1.15);
+  }
+}
+
+@keyframes afijTextGlow {
+
+  0%,100% {
+    text-shadow:
+      2px 2px 4px #000,
+      0 0 6px rgba(212,203,203,.15);
+  }
+
+  50% {
+    text-shadow:
+      2px 2px 4px #000,
+      0 0 10px rgba(212,203,203,.45),
+      0 0 18px rgba(147,95,255,.25);
+  }
+}
 .filing-cabinet {
   position:absolute;
   z-index:4;
